@@ -4,10 +4,10 @@ import img from './ai-human.avif'
 
 const App = () => {
 
-  const [transcript, setTarnscript] = useState("")
-  const [isListening, setIsListening] = useState(false)
-  const [information, setInformation] = useState("")
-  const [voices, setvoice] = useState([])
+  const [transcript, setTarnscript] = useState("") ;
+  const [isListening, setIsListening] = useState(false);
+  const [information, setInformation] = useState("");
+  const [voices, setvoice] = useState([]);
 
 
   const SpeechRecognition =
@@ -16,12 +16,12 @@ const App = () => {
 
   const loadVoice = () =>{
     const allVoice = window.speechSynthesis.getVoices(); //for vice listen
-    setvoice(allVoice)
+    setvoice(allVoice);
   }
 
   useEffect(() => {
     if(window.speechSynthesis.onvoiceschanged !== undefined){ //if voice is blank 
-      window.speechSynthesis.onvoiceschanged = loadVoice
+      window.speechSynthesis.onvoiceschanged = loadVoice ;
     }else{
       loadVoice(); //if voice is not blank
      
@@ -56,7 +56,7 @@ const App = () => {
     utterance.rate = 1;
     utterance.pitch = 1
     utterance.volume = 1;
-    window.speechSynthesis.speak(utterance)
+    window.speechSynthesis.speak(utterance) ;
 
   }
   
@@ -132,8 +132,8 @@ const App = () => {
       }else{
         const fallbackMessage = "I couldn't find detailed information"
       
-        speakText(fallbackMessage)
-        performGoogleSeach(command)
+        speakText(fallbackMessage);
+        performGoogleSeach(command);
       }
 
     }else{
