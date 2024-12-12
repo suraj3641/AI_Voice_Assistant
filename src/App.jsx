@@ -120,8 +120,8 @@ const App = () => {
     ];
 
     if(famousPeople.some((person)=>command.includes(person))){
-      const person = famousPeople.find((person)=>command.includes(person))
-      const personData = await fetchPersonData(person)
+      const person = famousPeople.find((person)=>command.includes(person));
+      const personData = await fetchPersonData(person);
 
       if(personData){
         const infoText = `${personData.name}, ${personData.extract}`
